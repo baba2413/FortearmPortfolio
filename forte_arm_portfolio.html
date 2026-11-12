@@ -226,6 +226,44 @@
       padding: 30px;
     }
 
+    .media-frame {
+      min-height: 420px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .media-frame img,
+    .media-frame video {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      display: block;
+    }
+
+    .media-frame video {
+      object-fit: contain;
+    }
+
+    .media-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      width: 100%;
+      min-height: inherit;
+    }
+
+    .media-card .media-frame {
+      border: none;
+      border-radius: 0;
+      min-height: 300px;
+      height: 300px;
+      border-bottom: 1px solid var(--line);
+    }
+
     .project-copy {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -521,12 +559,7 @@
         <div class="project-list">
 
           <article class="project-item">
-            <div class="media-placeholder">
-              IMAGE PLACEHOLDER<br /><br />
-              Suggested media:<br />
-              Isaac Sim 화면 / URDF 시각화 / robot CAD screenshot<br /><br />
-              src 예시: media/01_simulation.jpg
-            </div>
+            <div class="media-frame"><img src="media/01_simulation.jpg" alt="Forte Arm simulation" loading="lazy" /></div>
 
             <div class="project-copy">
               <div class="project-index">01 · Robot Modeling</div>
@@ -551,11 +584,11 @@
           </article>
 
           <article class="project-item">
-            <div class="media-placeholder">
-              IMAGE PLACEHOLDER<br /><br />
-              Suggested media:<br />
-              PCB photo / motor mount / fabricated parts / 3D-printed prototype<br /><br />
-              src 예시: media/02_hardware.jpg
+            <div class="media-frame">
+              <div class="media-split">
+                <img src="media/02_hardware(1).jpg" alt="Hardware prototype 1" loading="lazy" />
+                <img src="media/02_hardware(2).jpg" alt="Hardware prototype 2" loading="lazy" />
+              </div>
             </div>
 
             <div class="project-copy">
@@ -581,12 +614,7 @@
           </article>
 
           <article class="project-item">
-            <div class="media-placeholder">
-              VIDEO PLACEHOLDER<br /><br />
-              Suggested media:<br />
-              teleoperation demo / master-slave synchronized view<br /><br />
-              video 예시: media/03_teleoperation.mp4
-            </div>
+            <div class="media-frame"><video src="media/03_teleoperation.MOV" autoplay loop muted playsinline></video></div>
 
             <div class="project-copy">
               <div class="project-index">03 · Teleoperation</div>
@@ -611,12 +639,7 @@
           </article>
 
           <article class="project-item">
-            <div class="media-placeholder">
-              IMAGE / VIDEO PLACEHOLDER<br /><br />
-              Suggested media:<br />
-              Isaac Sim vs. physical robot / real-robot execution<br /><br />
-              src 예시: media/04_sim2real.jpg
-            </div>
+            <div class="media-frame"><video src="media/04_sim2real.mov" autoplay loop muted playsinline></video></div>
 
             <div class="project-copy">
               <div class="project-index">04 · Sim-to-Real</div>
@@ -639,12 +662,7 @@
           </article>
 
           <article class="project-item">
-            <div class="media-placeholder">
-              VIDEO PLACEHOLDER<br /><br />
-              Suggested media:<br />
-              gear-pushing VLA demo / data-collection scene<br /><br />
-              video 예시: media/05_vla.mp4
-            </div>
+            <div class="media-frame"><video src="media/05_vla.MOV" autoplay loop muted playsinline></video></div>
 
             <div class="project-copy">
               <div class="project-index">05 · VLA</div>
@@ -680,39 +698,23 @@
         <p class="eyebrow">Project Media</p>
         <h2 class="section-title">Images & Videos</h2>
         <p class="section-desc">
-          Placeholders for real project photos and demo videos.
+          Additional project photos and demo videos.
         </p>
 
         <div class="media-grid">
           <div class="media-card">
-            <div class="media-placeholder">VIDEO PLACEHOLDER — Teleoperation Demo</div>
+            <div class="media-frame"><video src="media/20260821_030428000_iOS.MOV" autoplay loop muted playsinline></video></div>
             <div class="media-info">
-              <h4>Teleoperation Demo</h4>
-              <p>media/teleoperation.mp4 또는 YouTube/Vimeo embed로 교체</p>
+              <h4>Demo Video 1</h4>
+              <p>Forte Arm demo</p>
             </div>
           </div>
 
           <div class="media-card">
-            <div class="media-placeholder">VIDEO PLACEHOLDER — VLA Gear Pushing</div>
+            <div class="media-frame"><video src="media/IMG_3808.MOV" autoplay loop muted playsinline></video></div>
             <div class="media-info">
-              <h4>VLA Real-Robot Demo</h4>
-              <p>media/vla_gear_push.mp4 또는 외부 영상 링크로 교체</p>
-            </div>
-          </div>
-
-          <div class="media-card">
-            <div class="media-placeholder">IMAGE PLACEHOLDER — Robot Prototype</div>
-            <div class="media-info">
-              <h4>Forte Arm Prototype</h4>
-              <p>media/forte_arm.jpg로 교체</p>
-            </div>
-          </div>
-
-          <div class="media-card">
-            <div class="media-placeholder">IMAGE PLACEHOLDER — Simulation</div>
-            <div class="media-info">
-              <h4>Simulation Environment</h4>
-              <p>media/isaac_sim.jpg로 교체</p>
+              <h4>Demo Video 2</h4>
+              <p>Forte Arm demo</p>
             </div>
           </div>
         </div>
